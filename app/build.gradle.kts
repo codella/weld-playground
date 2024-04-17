@@ -16,17 +16,17 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation(libs.junit.jupiter)
-
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
     // This dependency is used by the application.
     implementation(libs.guava)
     implementation(libs.weld.se.core)
     implementation(libs.smallrye.config)
     implementation(libs.flogger)
     runtimeOnly(libs.flogger.system.backend)
+    runtimeOnly(libs.jandex)
+
+    // Use JUnit Jupiter for testing.
+    testImplementation(libs.junit.jupiter)
+    testRuntimeOnly(libs.junit.platform.launcher)
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
