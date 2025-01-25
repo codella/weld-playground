@@ -22,7 +22,6 @@ dependencies {
     implementation(libs.smallrye.config)
     implementation(libs.flogger)
     runtimeOnly(libs.flogger.system.backend)
-    runtimeOnly(libs.jandex)
 
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
@@ -38,7 +37,7 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "org.jboss.weld.environment.se.StartMain"
+    mainClass = "org.example.Entry"
 }
 
 tasks.named<Test>("test") {
