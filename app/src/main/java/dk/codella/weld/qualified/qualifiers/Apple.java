@@ -1,4 +1,4 @@
-package org.example.qualified.qualifiers;
+package dk.codella.weld.qualified.qualifiers;
 
 import jakarta.inject.Qualifier;
 
@@ -11,5 +11,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Qualifier
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
-public @interface Banana {
+public @interface Apple {
 }

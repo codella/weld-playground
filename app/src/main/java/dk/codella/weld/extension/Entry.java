@@ -1,14 +1,12 @@
-package org.example;
+package dk.codella.weld.extension;
 
 import com.google.common.flogger.FluentLogger;
+import dk.codella.weld.qualified.Business;
+import dk.codella.weld.qualified.Chiquita;
+import dk.codella.weld.qualified.Melinda;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.AfterBeanDiscovery;
 import jakarta.enterprise.inject.spi.Extension;
-import org.example.alternative.Alien;
-import org.example.alternative.Ghost;
-import org.example.alternative.Human;
-import org.example.qualified.Chiquita;
-import org.example.qualified.Melinda;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
@@ -19,12 +17,6 @@ public class Entry {
     public static void main(String[] args) {
         WeldContainer container =  new Weld()
                 .disableDiscovery()
-                .addBeanClass(Business.class)
-                .addBeanClass(Alien.class)
-                .addBeanClass(Ghost.class)
-                .addBeanClass(Human.class)
-                .addBeanClass(Chiquita.class)
-                .addBeanClass(Melinda.class)
                 .addExtension(new AppExtension())
                 .initialize();
 

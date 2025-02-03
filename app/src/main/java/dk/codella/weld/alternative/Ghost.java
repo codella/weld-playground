@@ -1,4 +1,4 @@
-package org.example.alternative;
+package dk.codella.weld.alternative;
 
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;

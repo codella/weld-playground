@@ -1,4 +1,4 @@
-package org.example.alternative;
+package dk.codella.weld.alternative;
 
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -6,10 +6,10 @@ import jakarta.enterprise.inject.Alternative;
 
 @ApplicationScoped
 @Alternative
-@Priority(500)
-public class Human implements Entity {
+@Priority(10)
+public class Alien implements Entity {
     @Override
     public String name() {
-        return "John";
+        return "Xirix";
     }
 }

@@ -1,4 +1,4 @@
-package org.example.interceptor;
+package dk.codella.weld.interceptor;
 
 import jakarta.interceptor.AroundInvoke;
 import jakarta.interceptor.Interceptor;
