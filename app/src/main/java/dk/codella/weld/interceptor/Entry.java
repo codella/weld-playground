@@ -10,7 +10,8 @@ public class Entry {
             .disableDiscovery()
             .addBeanClass(Car.class)
             .addBeanClass(HonkInterceptor.class)
-            .enableInterceptors(HonkInterceptor.class)
+            .addInterceptor(HonkInterceptor.class)
+            /* Also viable: .enableInterceptors(HonkInterceptor.class) */
             .initialize();
 
     container.select(Car.class).get().drive();
