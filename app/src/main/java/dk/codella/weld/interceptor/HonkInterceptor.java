@@ -16,7 +16,7 @@ public class HonkInterceptor {
   @AroundInvoke
   public Object honk(InvocationContext ctx) throws Exception {
     logger.atInfo().log("first hooonk!");
-    var ret =  ctx.proceed();
+    var ret = ctx.proceed();
     logger.atInfo().log("second hooonk!");
     return ret;
   }

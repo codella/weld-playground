@@ -10,8 +10,8 @@ public class Business {
 
   @Inject
   public Business(
-          /* will inject the Entity alternative with the highest priority */
-          Entity entity) {
+      /* will inject the Entity alternative with the highest priority */
+      Entity entity) {
     this.entity = entity;
   }
 

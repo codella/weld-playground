@@ -11,8 +11,8 @@ public class Business {
 
   @Inject
   public Business(
-          /* will inject the bean qualified with @Banana */
-          @Banana Fruit fruit) {
+      /* will inject the bean qualified with @Banana */
+      @Banana Fruit fruit) {
     this.fruit = fruit;
   }
 

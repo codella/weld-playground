@@ -8,6 +8,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    checkstyle
 }
 
 repositories {
@@ -26,6 +27,10 @@ dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly(libs.junit.platform.launcher)
+}
+
+checkstyle {
+    toolVersion = "10.21.2"
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

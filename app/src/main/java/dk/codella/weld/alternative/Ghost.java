@@ -8,8 +8,8 @@ import jakarta.enterprise.inject.Alternative;
 @Alternative
 @Priority(20)
 public class Ghost implements Entity {
-    @Override
-    public String name() {
-        return "Ole II";
-    }
+  @Override
+  public String name() {
+    return "Ole II";
+  }
 }

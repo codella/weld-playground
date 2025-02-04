@@ -12,23 +12,23 @@ import org.jboss.weld.environment.se.WeldContainer;
 
 public class Entry {
 
-    private static final FluentLogger logger = FluentLogger.forEnclosingClass();
+  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 
-    public static void main(String[] args) {
-        WeldContainer container =  new Weld()
-                .disableDiscovery()
-                .addExtension(new AppExtension())
-                .initialize();
+  public static void main(String[] args) {
+    WeldContainer container = new Weld()
+        .disableDiscovery()
+        .addExtension(new AppExtension())
+        .initialize();
 
-        container.select(Business.class).get().quack();
-        container.shutdown();
+    container.select(Business.class).get().quack();
+    container.shutdown();
+  }
+
+  private static class AppExtension implements Extension {
+
+    public void doSomething(@Observes AfterBeanDiscovery evt) {
+      logger.atInfo().log("After bean discovery intercepted");
     }
 
-    private static class AppExtension implements Extension {
-
-        public void abdh(@Observes AfterBeanDiscovery evt) {
-            logger.atInfo().log("After bean discovery intercepted");
-        }
-
-    }
+  }
 }

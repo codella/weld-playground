@@ -1,8 +1,6 @@
-package dk.codella.weld.alternative;
+package dk.codella.weld.decorator;
 
 import com.google.common.flogger.FluentLogger;
-import dk.codella.weld.qualified.Chiquita;
-import dk.codella.weld.qualified.Melinda;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.AfterBeanDiscovery;
 import jakarta.enterprise.inject.spi.Extension;
@@ -16,13 +14,9 @@ public class Entry {
   public static void main(String[] args) {
     WeldContainer container = new Weld()
         .disableDiscovery()
-        .addBeanClass(Business.class)
-        .addBeanClass(Alien.class)
-        .addBeanClass(Ghost.class)
-        .addBeanClass(Human.class)
+        .addExtension(new AppExtension())
         .initialize();
 
-    container.select(Business.class).get().quack();
     container.shutdown();
   }
 

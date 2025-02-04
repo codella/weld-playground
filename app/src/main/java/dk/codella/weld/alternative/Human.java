@@ -8,8 +8,8 @@ import jakarta.enterprise.inject.Alternative;
 @Alternative
 @Priority(500)
 public class Human implements Entity {
-    @Override
-    public String name() {
-        return "John";
-    }
+  @Override
+  public String name() {
+    return "John";
+  }
 }
