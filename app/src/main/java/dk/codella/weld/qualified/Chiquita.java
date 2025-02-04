@@ -1,7 +1,7 @@
 package dk.codella.weld.qualified;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import dk.codella.weld.qualified.qualifiers.Banana;
+import jakarta.enterprise.context.ApplicationScoped;
 
 @Banana
 @ApplicationScoped

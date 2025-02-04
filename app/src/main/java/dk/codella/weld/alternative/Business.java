@@ -6,7 +6,7 @@ import jakarta.inject.Inject;
 @ApplicationScoped
 public class Business {
 
-  private Entity entity;
+  private final Entity entity;
 
   @Inject
   public Business(

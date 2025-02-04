@@ -2,8 +2,6 @@ package dk.codella.weld.extension;
 
 import com.google.common.flogger.FluentLogger;
 import dk.codella.weld.qualified.Business;
-import dk.codella.weld.qualified.Chiquita;
-import dk.codella.weld.qualified.Melinda;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.AfterBeanDiscovery;
 import jakarta.enterprise.inject.spi.Extension;
