@@ -1,7 +1,7 @@
 package dk.codella.weld.extension;
 
 import com.google.common.flogger.FluentLogger;
-import dk.codella.weld.qualified.Business;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.enterprise.inject.spi.AfterBeanDiscovery;
 import jakarta.enterprise.inject.spi.Extension;
@@ -15,10 +15,11 @@ public class Entry {
   public static void main(String[] args) {
     WeldContainer container = new Weld()
         .disableDiscovery()
+        // We need to add a bean, otherwise Weld won't boostrap
+        .addBeanClass(Bean.class)
         .addExtension(new AppExtension())
         .initialize();
 
-    container.select(Business.class).get().quack();
     container.shutdown();
   }
 
@@ -27,6 +28,11 @@ public class Entry {
     public void doSomething(@Observes AfterBeanDiscovery evt) {
       logger.atInfo().log("After bean discovery intercepted");
     }
+
+  }
+
+  @ApplicationScoped
+  private class Bean {
 
   }
 }

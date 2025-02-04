@@ -31,6 +31,8 @@ dependencies {
 
 checkstyle {
     toolVersion = "10.21.2"
+    isIgnoreFailures = false
+    maxWarnings = 10
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

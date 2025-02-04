@@ -1,9 +1,7 @@
 package dk.codella.weld.decorator;
 
 import com.google.common.flogger.FluentLogger;
-import jakarta.enterprise.event.Observes;
-import jakarta.enterprise.inject.spi.AfterBeanDiscovery;
-import jakarta.enterprise.inject.spi.Extension;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
@@ -14,17 +12,13 @@ public class Entry {
   public static void main(String[] args) {
     WeldContainer container = new Weld()
         .disableDiscovery()
-        .addExtension(new AppExtension())
+        // We need to add a bean, otherwise Weld won't boostrap
+        .addBeanClass(Bean.class)
         .initialize();
 
     container.shutdown();
   }
 
-  private static class AppExtension implements Extension {
-
-    public void abdh(@Observes AfterBeanDiscovery evt) {
-      logger.atInfo().log("After bean discovery intercepted");
-    }
-
-  }
+  @ApplicationScoped
+  private class Bean {}
 }
