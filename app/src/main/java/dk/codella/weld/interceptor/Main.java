@@ -6,8 +6,7 @@ import org.jboss.weld.environment.se.WeldContainer;
 public class Main {
 
   public static void main(String[] args) {
-    WeldContainer container = new Weld()
-        .disableDiscovery()
+    WeldContainer container = new Weld().disableDiscovery()
         .addBeanClass(Car.class)
         .addBeanClass(HonkInterceptor.class)
         .addInterceptor(HonkInterceptor.class)

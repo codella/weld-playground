@@ -6,8 +6,7 @@ import org.jboss.weld.environment.se.WeldContainer;
 public class Main {
 
   public static void main(String[] args) {
-    WeldContainer container = new Weld()
-        .disableDiscovery()
+    WeldContainer container = new Weld().disableDiscovery()
         // Alternatives need to be activated with addAlternative(), but they still
         // need to be registered with addBeanClass()
         .addAlternative(SecondAlternative.class)
