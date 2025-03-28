@@ -15,6 +15,8 @@ public class Main {
         // Alternatives need to be registered as beans, but won't activate by default
         .addBeanClass(SecondAlternative.class)
         .addBeanClass(FirstAlternative.class)
+        // If this is remove, only alternatives will be present.
+        // In that case, it appears that Weld will then activate the alternatives automatically.
         .addBeanClass(Mainstream.class)
         .addBeanClass(Entry.class)
         .initialize();

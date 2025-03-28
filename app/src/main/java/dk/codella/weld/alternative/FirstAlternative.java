@@ -6,7 +6,9 @@ import jakarta.enterprise.inject.Alternative;
 
 @ApplicationScoped
 @Alternative
-@Priority(10)
+// If both FirstAlternative and SecondAlternative are activated, then they need to specify
+// a priority. As a side effect, specifying @Priority will also automatically activate the alternative.
+//@Priority(20)
 public class FirstAlternative implements Entity {
   @Override
   public String name() {
