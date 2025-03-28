@@ -7,9 +7,9 @@ import jakarta.enterprise.inject.Alternative;
 @ApplicationScoped
 @Alternative
 @Priority(10)
-public class Alien implements Entity {
+public class FirstAlternative implements Entity {
   @Override
   public String name() {
-    return "Xirix";
+    return "First alternative";
   }
 }

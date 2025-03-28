@@ -8,7 +8,7 @@ import jakarta.enterprise.inject.spi.Extension;
 import org.jboss.weld.environment.se.Weld;
 import org.jboss.weld.environment.se.WeldContainer;
 
-public class Entry {
+public class Main {
 
   private static final FluentLogger logger = FluentLogger.forEnclosingClass();
 

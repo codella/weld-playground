@@ -6,10 +6,10 @@ import jakarta.enterprise.inject.Alternative;
 
 @ApplicationScoped
 @Alternative
-@Priority(500)
-public class Human implements Entity {
+@Priority(10)
+public class SecondAlternative implements Entity {
   @Override
   public String name() {
-    return "John";
+    return "Second alternative";
   }
 }

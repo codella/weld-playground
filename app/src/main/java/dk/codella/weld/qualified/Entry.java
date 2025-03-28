@@ -11,6 +11,7 @@ public class Entry {
         .addBeanClass(Business.class)
         .addBeanClass(Chiquita.class)
         .addBeanClass(Melinda.class)
+        .addServices()
         .initialize();
 
     container.select(Business.class).get().quack();
