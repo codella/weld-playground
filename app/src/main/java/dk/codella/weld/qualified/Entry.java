@@ -1,21 +1,22 @@
 package dk.codella.weld.qualified;
 
-import org.jboss.weld.environment.se.Weld;
-import org.jboss.weld.environment.se.WeldContainer;
+import dk.codella.weld.qualified.qualifiers.Banana;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
+@ApplicationScoped
 public class Entry {
 
-  public static void main(String[] args) {
-    WeldContainer container = new Weld()
-        .disableDiscovery()
-        .addBeanClass(Business.class)
-        .addBeanClass(Chiquita.class)
-        .addBeanClass(Melinda.class)
-        .addServices()
-        .initialize();
+  private final Fruit fruit;
 
-    container.select(Business.class).get().quack();
-    container.shutdown();
+  @Inject
+  /* will inject the bean qualified with @Banana */
+  public Entry(@Banana Fruit fruit) {
+    this.fruit = fruit;
+  }
+
+  public void perform() {
+    System.out.println(fruit.chew());
   }
 
 }

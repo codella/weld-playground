@@ -10,7 +10,7 @@ public class Main {
         .addBeanClass(Car.class)
         .addBeanClass(HonkInterceptor.class)
         .addInterceptor(HonkInterceptor.class)
-        /* Also viable: .enableInterceptors(HonkInterceptor.class, ...) */
+        // Also viable: .enableInterceptors(HonkInterceptor.class, ...)
         .initialize();
 
     container.select(Car.class).get().drive();

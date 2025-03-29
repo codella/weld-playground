@@ -24,14 +24,11 @@ public class Main {
 
   private static class AppExtension implements Extension {
 
-    public void doSomething(@Observes AfterBeanDiscovery evt) {
+    public void observer(@Observes AfterBeanDiscovery evt) {
       logger.atInfo().log("After bean discovery intercepted");
     }
-
   }
 
   @ApplicationScoped
-  private class Bean {
-
-  }
+  private static class Bean {}
 }
