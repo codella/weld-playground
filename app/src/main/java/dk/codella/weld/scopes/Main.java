@@ -18,8 +18,6 @@ public class Main {
         )
         .initialize();
 
-    // We ask the container to provide us with an instance
-    // of Bean, so we can utilize it to perform.
     Bean bean = container.select(Bean.class).get();
     bean.perform();
   }
