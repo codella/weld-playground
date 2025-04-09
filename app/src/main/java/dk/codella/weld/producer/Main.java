@@ -17,9 +17,9 @@ public class Main {
   }
 
   public static class BeanWithProducers {
-    @Produces
     // Methods annotated with @Produces behave as
     // if they were annotated with @Inject
+    @Produces
     public External produceExternal() {
       return new External();
     }
