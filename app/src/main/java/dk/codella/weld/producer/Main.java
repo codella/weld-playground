@@ -17,8 +17,9 @@ public class Main {
   }
 
   public static class BeanWithProducers {
-    // Methods annotated with @Produces behave as
-    // if they were annotated with @Inject
+    // Producer methods are treated as initializer methods, which
+    // means that if they have parameters, the container will try
+    // to satisfy them when invoking the method.
     @Produces
     public External produceExternal() {
       return new External();
