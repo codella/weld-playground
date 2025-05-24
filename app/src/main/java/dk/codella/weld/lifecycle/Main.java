@@ -12,6 +12,7 @@ public class Main {
         .addBeanClass(Bean.class)
         .initialize();
 
+    // Programmatically retrieve a CDI-managed bean instance
     Bean bean = container.select(Bean.class).get();
     bean.perform();
   }
